@@ -16,8 +16,9 @@ ngApp.controller('repoCntrl', function($scope, $http) {
   
     $http.get('https://bitbucket.org/api/2.0/repositories/battlemidget/python-salesforce/commits')
     .success(function(data){
-      $scope.commitsData = data;
+      $scope.foo = data;
     });
+
   }
 
   $scope.repoData();

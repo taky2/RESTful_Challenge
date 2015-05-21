@@ -14,21 +14,30 @@
       <tr>
         <th>Commits</th>
         <th>Comments</th>
-        <th>Branch</th>
+        <th>Parent<br>Branch(es)</th>
         <th>Date</th>
         <th>Username</th>
       </tr>
-      <tr ng-repeat="commit in commitsData">
-        <td>{{commit.pagelen}}</td>
+      <tr ng-repeat="commit in foo">
 
+        <td>{{commit[0].hash.substr(0,6)}}</td>
+        <td>{{commit[0].message}}</td>
+        <td>
+            <p> {{commit[0].parents[0].hash.substr(0,6)}}<br>
+                {{commit[0].parents[1].hash.substr(0,6)}}
+            </p>
+        </td>
+        <td>{{commit[0].date}}</td>
+        <td>{{commit[0].author.raw}}</td>
+                        
       </tr>
     </table>
 
 
     <p>" - - - - - - - - - - - - "</p>
-    <p>{{mainRepo.scm}}</p>
+    <p>{{mainRepo}}</p>
     <p>" - - - - - - - - - - - - "</p>
-    <p>{{commitsData}}</p>
+    <p>{{foo}}</p>
 
 </body>
 </html>
