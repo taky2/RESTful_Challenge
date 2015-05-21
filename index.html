@@ -18,15 +18,17 @@
         <th>Date</th>
         <th>Username</th>
       </tr>
-      <tr ng-repeat="issue in data.issues">
-        <td>{{commits.html.href}}</td>
-        <td>{{commits.message}}</td>
-        <td>{{issue.branch}}</td>
-        <td>{{commits.date}}</td>
-        <td>{{commits.user.username}}</td>
+      <tr ng-repeat="commit in commitsData">
+        <td>{{commit.pagelen}}</td>
+
       </tr>
     </table>
-    <p>{{data}}</p>
+
+
+    <p>" - - - - - - - - - - - - "</p>
+    <p>{{mainRepo.scm}}</p>
+    <p>" - - - - - - - - - - - - "</p>
+    <p>{{commitsData}}</p>
 
 </body>
 </html>
