@@ -1,5 +1,4 @@
 var ngApp = angular.module('ng-app', []);
-
 ngApp.controller('repoCntrl', function($scope, $http) {
 
   $scope.commitArray1 = [];
@@ -31,5 +30,4 @@ ngApp.controller('repoCntrl', function($scope, $http) {
     });
   }
   $scope.commitsData3();
-
 });
