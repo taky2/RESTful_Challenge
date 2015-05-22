@@ -20,17 +20,40 @@
             <th>Date</th>
             <th>Username</th>
         </tr>
-
         <div id="tblContents"></div>
-                             
     </table>
-
 
     <script>
         var tbl=$("<table/>").attr("id","mytable");
         var tString = "";
-        for (var i = 0; i < 4; i++) {
-            tString += "<tr ng-repeat=\"commit in commitArray\">";
+        for (var i = 0; i < 30; i++) {
+            tString += "<tr ng-repeat=\"commit in commitArray1\">";
+            tString += "<td>{{commit["+i+"].hash.substr(0,6)}}</td>";
+            tString += "<td>{{commit["+i+"].message}}</td>";
+            tString += "<td>";
+                tString += "<p> {{commit["+i+"].parents[0].hash.substr(0,6)}}<br>"
+                             + "{{commit["+i+"].parents[1].hash.substr(0,6)}}"
+                             + "</p>";
+            tString += "</td>";
+            tString += "<td>{{commit["+i+"].date.substr(0,10)}}</td>";
+            tString += "<td>{{commit["+i+"].author.raw}}</td>";
+            tString += "</tr>";
+        }
+        for (var i = 0; i < 30; i++) {
+            tString += "<tr ng-repeat=\"commit in commitArray2\">";
+            tString += "<td>{{commit["+i+"].hash.substr(0,6)}}</td>";
+            tString += "<td>{{commit["+i+"].message}}</td>";
+            tString += "<td>";
+                tString += "<p> {{commit["+i+"].parents[0].hash.substr(0,6)}}<br>"
+                             + "{{commit["+i+"].parents[1].hash.substr(0,6)}}"
+                             + "</p>";
+            tString += "</td>";
+            tString += "<td>{{commit["+i+"].date.substr(0,10)}}</td>";
+            tString += "<td>{{commit["+i+"].author.raw}}</td>";
+            tString += "</tr>";
+        }
+        for (var i = 0; i < 13; i++) {
+            tString += "<tr ng-repeat=\"commit in commitArray3\">";
             tString += "<td>{{commit["+i+"].hash.substr(0,6)}}</td>";
             tString += "<td>{{commit["+i+"].message}}</td>";
             tString += "<td>";
