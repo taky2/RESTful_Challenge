@@ -1,7 +1,7 @@
 # RESTful_Challenge
 Attemped to consume BitBucket API via AngularJS - ran into difficulties and used JQuery to populate table rather than troubleshoot the AngularJS issues. 
 
-NOTE: I realize that I should use JQuery OR Angular and not both. It was a last minute hack to compesate for a deadline.
+NOTE: I realize that I should use JQuery OR Angular and not both. It was a last minute hack to to meet a deadline.
 
 
 Assignment:
