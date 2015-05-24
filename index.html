@@ -8,31 +8,31 @@
 </head>
 <body ng-controller="repoCntrl">
     <h3>Public activity in battlemidget's python-salesforce repository</h3>
-    <table border="1" class="table table-striped">
-    <tr>
-      <th>Commits</th>
-      <th>Comments</th>
-      <th>Parent
-        <br>Branch(es)</th>
-      <th>Date</th>
-      <th>Username</th>
-    </tr>
-    <tr ng-repeat="commit in commitsArray.values">
+        <table border="1" class="table table-striped">
+            <tr>
+              <th>Commits</th>
+              <th>Comments</th>
+              <th>Parent
+                <br>Branch(es)</th>
+              <th>Date</th>
+              <th>Username</th>
+            </tr>
+            <tr ng-repeat="commit in commitsArray.values">
 
-      <td>{{commit.hash.substr(0,6)}}</td>
-      <td>{{commit.message}}</td>
-      <td>
-        <p ng-repeat="parent in commit.parents">
-          {{parent.hash.substr(0,6)}}
-        </p>
-      </td>
-      <td>{{commit.date}}</td>
-      <td>{{commit.author.raw}}</td>
-
-    </tr>
-</table>
+              <td>{{commit.hash.substr(0,6)}}</td>
+              <td>{{commit.message}}</td>
+              <td>
+                <p ng-repeat="parent in commit.parents">
+                  {{parent.hash.substr(0,6)}}
+                </p>
+              </td>
+              <td>{{commit.date}}</td>
+              <td>{{commit.author.raw}}</td>
+            </tr>
+        </table>
 Page {{commitsArray.page}}, {{commitsArray.pagelen}} commits.
 <a ng-src="{{commitsArray.next}}">Next Page</a>
+
 </body>
 </html>
 
