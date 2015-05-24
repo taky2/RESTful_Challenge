@@ -4,10 +4,13 @@
 <title>Page Title</title>
 <script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js></script>
 <script src="controllers.js"></script>
-
 </head>
+
 <body ng-controller="repoCntrl">
     <h3>Public activity in battlemidget's python-salesforce repository</h3>
+        
+        <label>Search: <input type="text" ng-model="commitFilter" placeholder=""/> </label><br>
+        <br>
         <table border="1" class="table table-striped">
             <tr>
               <th>Commits</th>
@@ -17,22 +20,40 @@
               <th>Date</th>
               <th>Username</th>
             </tr>
-            <tr ng-repeat="commit in commitsArray.values">
-
-              <td>{{commit.hash.substr(0,6)}}</td>
+            <tr ng-repeat="commit in commitsArray.values | filter: searchFilter">
+              <td align="center">{{commit.hash.substr(0,6)}}</td>
               <td>{{commit.message}}</td>
               <td>
-                <p ng-repeat="parent in commit.parents">
+                <p align="center" ng-repeat="parent in commit.parents">
                   {{parent.hash.substr(0,6)}}
                 </p>
               </td>
-              <td>{{commit.date}}</td>
+              <td width="100" align="center">{{commit.date.substr(0,10)}}</td>
+              <td>{{commit.author.raw}}</td>
+            </tr>
+            <tr ng-repeat="commit in commitsArray2.values | filter: searchFilter">
+              <td align="center">{{commit.hash.substr(0,6)}}</td>
+              <td>{{commit.message}}</td>
+              <td>
+                <p align="center" ng-repeat="parent in commit.parents">
+                  {{parent.hash.substr(0,6)}}
+                </p>
+              </td>
+              <td width="100" align="center">{{commit.date.substr(0,10)}}</td>
+              <td>{{commit.author.raw}}</td>
+            </tr>
+            <tr ng-repeat="commit in commitsArray3.values | filter: searchFilter">
+              <td align="center">{{commit.hash.substr(0,6)}}</td>
+              <td>{{commit.message}}</td>
+              <td>
+                <p align="center" ng-repeat="parent in commit.parents">
+                  {{parent.hash.substr(0,6)}}
+                </p>
+              </td>
+              <td width="100" align="center">{{commit.date.substr(0,10)}}</td>
               <td>{{commit.author.raw}}</td>
             </tr>
         </table>
-Page {{commitsArray.page}}, {{commitsArray.pagelen}} commits.
-<a ng-src="{{commitsArray.next}}">Next Page</a>
-
 </body>
 </html>
 

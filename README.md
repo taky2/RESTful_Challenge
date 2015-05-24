@@ -2,7 +2,7 @@
 
 Consume RESTful BitBucket API via AngularJS. 
 
-Note: Current version was submitted after the deadline. It only displays 1 page from API (30 commits). Previous version/commit of this project shows all commits but with errors and sloppy code.
+Note: Current version was submitted after the deadline. It only displays 1 page from API (30 commits). Previous version/commit of this project displays all BitBucket commits for provided repository (but with errors and sloppy code).
 
 Assignment:
 
